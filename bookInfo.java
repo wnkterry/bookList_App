@@ -1,11 +1,14 @@
 package com.example.kathy.booklist;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Kathy on 11/22/2017.
  */
 
-public class bookInfo {
-
+public class bookInfo implements Parcelable {
+    Parcelable.Creator CREATOR;
     private String title;
     private String author;
     private String url;
@@ -31,6 +34,16 @@ public class bookInfo {
 
     public String getUrl() {
         return url;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
     }
 }
 
