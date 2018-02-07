@@ -154,15 +154,15 @@ public class BookListActivity extends AppCompatActivity implements LoaderManager
 
 
     @Override
-    public void onSaveInstanceState(Bundle SavedInstanceState) {
-        SavedInstanceState.putParcelableArrayList("bookList", books);
-        super.onSaveInstanceState(SavedInstanceState);
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("bookList", books);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        books = (ArrayList) savedInstanceState.getParcelableArrayList("bookList");
+    public void onRestoreInstanceState(Bundle savedState) {
+        super.onRestoreInstanceState(savedState);
+        books = savedState.getParcelableArrayList("bookList");
     }
 
 
